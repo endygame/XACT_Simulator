@@ -35,7 +35,7 @@ This will:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/endygame/XACT_Simulator/tree/main
    cd Acoustic
    ```
 
@@ -129,9 +129,9 @@ results/
 |-----------|---------|-------|-------------|
 | **Phantom Size** | 256×256×200 | - | Voxels |
 | **Voxel Resolution** | 1.5 mm | - | Spatial resolution |
-| **Sensors** | 128 | 32-512 | Circular array |
+| **Sensors** | 128 | - | Circular array |
 | **X-ray Energy** | 120 keV | 50-300 | Beam energy |
-| **Center Frequency** | 7.5 MHz | 1-10 | Acoustic frequency |
+| **Center Frequency** | 1.5 MHz | 1-10 | Acoustic frequency |
 | **Scan Duration** | 100 ns | 0.1-1000 | Signal duration |
 
 ### Sensor Interface
@@ -146,7 +146,7 @@ array = create_default_ultrasound_array(
     center=np.array([0, 0, 0]),
     radius=0.1,  # 10 cm
     num_sensors=128,
-    center_frequency=7.5e6,  # 7.5 MHz
+    center_frequency=1.5e6,  # 1.5 MHz
     bandwidth=3.0e6  # 3 MHz
 )
 
@@ -192,29 +192,12 @@ For complete technical details, mathematical models, and tissue properties, see:
 4. **File not found**: Run `python xcat_thorax_loader.py` first
 5. **Results not saved**: Check that `results/` directory exists
 
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
 ### License
 
 This project is for educational and research purposes. The XCAT phantom methodology is based on published literature (see documentation for references).
 
-### Citation
 
-If you use this simulation in your research, please cite:
-
-```bibtex
-@software{xact_simulation,
-  title={XACT Simulation with XCAT Thorax Phantom},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/your-repo/xact-simulation}
-}
 ```
 
 ### Contact
