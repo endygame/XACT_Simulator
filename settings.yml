@@ -1,0 +1,53 @@
+# XACT Scan Configuration
+
+# Beam Configuration
+beam_settings:
+  multiple_beams: false  # Set to true for tomographic imaging, false for single-beam 2D radiography
+  num_beams: 36         # Number of beams when multiple_beams is true
+  beam_energy: 120      # X-ray beam energy in keV
+  beam_fluence: 1.0e10  # Photons per cm²
+  beam_width: 0.02      # Beam width in meters
+  filtration: "Al_2.5mm"  # X-ray beam filtration material and thickness
+
+# Detector Configuration
+detector_settings:
+  type: "linear_array"  # Options: "linear_array", "ring_array"
+  num_elements: 128     # Number of detector elements
+  frequency: 7.5e6     # Center frequency in Hz (7.5 MHz)
+  bandwidth: 0.8       # Fractional bandwidth
+  position:
+    distance: 0.1      # Distance from center in meters
+    angle: 0.0         # Detector array angle in radians
+
+# Simulation Parameters
+simulation:
+  voxel_size: 0.5e-3   # Voxel size in meters (0.5mm)
+  time_steps: 1000     # Number of time steps for acoustic propagation
+  time_step: 1.0e-8    # Time step size in seconds (10ns)
+  save_pressure_field: false  # Whether to save intermediate pressure fields
+
+# Image Quality
+quality:
+  snr_target: 40       # Target signal-to-noise ratio in dB
+  spatial_resolution: 0.5e-3  # Target spatial resolution in meters
+  contrast_enhancement: false # Apply contrast enhancement in reconstruction
+
+# Output Settings
+output:
+  save_raw_data: true  # Save raw detector signals
+  save_metadata: true  # Save scan parameters and geometry
+  compression: true    # Compress output data
+  format: "npy"       # Output format for numerical data
+
+# Advanced Physics
+physics:
+  acoustic_absorption: true   # Include acoustic absorption in tissue
+  nonlinear_effects: false   # Include nonlinear acoustic effects
+  thermal_diffusion: false   # Include thermal diffusion in initial pressure
+  beam_hardening: true       # Account for X-ray beam hardening
+
+# System Calibration
+calibration:
+  detector_sensitivity: 1.0   # Relative detector sensitivity
+  beam_profile_correction: true  # Apply beam profile correction
+  geometric_correction: true     # Apply geometric correction factors 
