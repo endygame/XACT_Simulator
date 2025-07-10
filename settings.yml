@@ -13,7 +13,7 @@ beam_settings:
 detector_settings:
   type: "linear_array"  # Options: "linear_array", "ring_array"
   num_elements: 128     # Number of detector elements
-  frequency: 7.5e6     # Center frequency in Hz (7.5 MHz)
+  frequency: 1.5e6     # Center frequency in Hz (1.5 MHz)
   bandwidth: 0.8       # Fractional bandwidth
   position:
     distance: 0.1      # Distance from center in meters

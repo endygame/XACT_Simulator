@@ -289,7 +289,7 @@ class UltrasoundDetector:
     
     def __init__(self, detector_type: str = 'ring_array', 
                  num_elements: int = 128,
-                 frequency: float = 7.5e6,  # 7.5 MHz
+                 frequency: float = 1.5e6,  # 1.5 MHz
                  bandwidth: float = 0.8):
         self.detector_type = detector_type
         self.num_elements = num_elements
